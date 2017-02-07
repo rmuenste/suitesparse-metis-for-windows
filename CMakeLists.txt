@@ -9,7 +9,9 @@ PROJECT(SuiteSparseProject)
 
 cmake_minimum_required(VERSION 2.8.10)
 
-include(checkGetSuiteSparse.cmake)
+if(${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
+  include(checkGetSuiteSparse.cmake)
+endif()
 
 SET(LIBRARY_OUTPUT_PATH ${${PROJECT_NAME}_BINARY_DIR}/lib CACHE PATH "Output directory for libraries" )
 SET(EXECUTABLE_OUTPUT_PATH ${${PROJECT_NAME}_BINARY_DIR}/bin CACHE PATH "Output directory for applications" )
